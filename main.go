@@ -12,5 +12,9 @@ func main()  {
 	droneManager := models.NewDroneManager()
 	droneManager.TakeOff()
 	time.Sleep(10*time.Second)
+	droneManager.Patrol()
+	time.Sleep(30*time.Second)
+	droneManager.Patrol()
+	time.Sleep(10*time.Second)
 	droneManager.Land()
 }
