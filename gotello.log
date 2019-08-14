@@ -1,0 +1,473 @@
+2019/08/14 10:08:19 robot.go:131: Initializing connections...
+2019/08/14 10:08:19 robot.go:137: Initializing devices...
+2019/08/14 10:08:19 robot.go:140: Initializing device Tello-7E527694CA4BEA23 ...
+2019/08/14 10:08:19 robot.go:154: Robot tello initialized.
+2019/08/14 10:08:19 robot.go:164: Starting Robot tello ...
+2019/08/14 10:08:19 connection.go:44: Starting connections...
+2019/08/14 10:08:19 device.go:57: Starting devices...
+2019/08/14 10:08:19 device.go:65: Starting device Tello-7E527694CA4BEA23...
+2019/08/14 10:08:19 robot.go:179: Starting work...
+2019/08/14 10:10:12 server.go:3012: http: panic serving [::1]:51881: runtime error: invalid memory address or nil pointer dereference
+goroutine 19 [running]:
+net/http.(*conn).serve.func1(0xc0000af040)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1769 +0x139
+panic(0x13bc5a0, 0x1754140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/runtime/panic.go:522 +0x1b5
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x14a9b60, 0xc00016c000, 0x0, 0x0, 0x14a9c80, 0xc00008a3f0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:119 +0x2f
+github.com/taqboz/gotello/app/controllers.viewIndexhandler(0x14b05c0, 0xc00016c000, 0xc00014e100)
+	/Users/takumi/Workspace/go/src/github.com/taqboz/gotello/app/controllers/webserver.go:13 +0xc0
+net/http.HandlerFunc.ServeHTTP(0x143ead0, 0x14b05c0, 0xc00016c000, 0xc00014e100)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1995 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1763620, 0x14b05c0, 0xc00016c000, 0xc00014e100)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2375 +0x1d6
+net/http.serverHandler.ServeHTTP(0xc0000ca8f0, 0x14b05c0, 0xc00016c000, 0xc00014e100)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2774 +0xa8
+net/http.(*conn).serve(0xc0000af040, 0x14b0cc0, 0xc00005c200)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1878 +0x851
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2884 +0x2f4
+2019/08/14 10:10:12 server.go:3012: http: panic serving [::1]:51882: runtime error: invalid memory address or nil pointer dereference
+goroutine 4 [running]:
+net/http.(*conn).serve.func1(0xc000140000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1769 +0x139
+panic(0x13bc5a0, 0x1754140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/runtime/panic.go:522 +0x1b5
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x14a9b60, 0xc00016c0e0, 0x0, 0x0, 0x14a9c80, 0xc00013c1e0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:119 +0x2f
+github.com/taqboz/gotello/app/controllers.viewIndexhandler(0x14b05c0, 0xc00016c0e0, 0xc00014e000)
+	/Users/takumi/Workspace/go/src/github.com/taqboz/gotello/app/controllers/webserver.go:13 +0xc0
+net/http.HandlerFunc.ServeHTTP(0x143ead0, 0x14b05c0, 0xc00016c0e0, 0xc00014e000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1995 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1763620, 0x14b05c0, 0xc00016c0e0, 0xc00014e000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2375 +0x1d6
+net/http.serverHandler.ServeHTTP(0xc0000ca8f0, 0x14b05c0, 0xc00016c0e0, 0xc00014e000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2774 +0xa8
+net/http.(*conn).serve(0xc000140000, 0x14b0cc0, 0xc00005c0c0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1878 +0x851
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2884 +0x2f4
+2019/08/14 10:10:12 server.go:3012: http: panic serving [::1]:51883: runtime error: invalid memory address or nil pointer dereference
+goroutine 36 [running]:
+net/http.(*conn).serve.func1(0xc0001c4000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1769 +0x139
+panic(0x13bc5a0, 0x1754140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/runtime/panic.go:522 +0x1b5
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x14a9b60, 0xc0001ce000, 0x0, 0x0, 0x14a9c80, 0xc0000aaff0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:119 +0x2f
+github.com/taqboz/gotello/app/controllers.viewIndexhandler(0x14b05c0, 0xc0001ce000, 0xc00014e200)
+	/Users/takumi/Workspace/go/src/github.com/taqboz/gotello/app/controllers/webserver.go:13 +0xc0
+net/http.HandlerFunc.ServeHTTP(0x143ead0, 0x14b05c0, 0xc0001ce000, 0xc00014e200)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1995 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1763620, 0x14b05c0, 0xc0001ce000, 0xc00014e200)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2375 +0x1d6
+net/http.serverHandler.ServeHTTP(0xc0000ca8f0, 0x14b05c0, 0xc0001ce000, 0xc00014e200)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2774 +0xa8
+net/http.(*conn).serve(0xc0001c4000, 0x14b0cc0, 0xc00005c3c0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1878 +0x851
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2884 +0x2f4
+2019/08/14 10:10:34 server.go:3012: http: panic serving 127.0.0.1:51887: runtime error: invalid memory address or nil pointer dereference
+goroutine 20 [running]:
+net/http.(*conn).serve.func1(0xc0000af0e0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1769 +0x139
+panic(0x13bc5a0, 0x1754140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/runtime/panic.go:522 +0x1b5
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x14a9b60, 0xc00016c1c0, 0x0, 0x0, 0x14a9c80, 0xc00008a4b0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:119 +0x2f
+github.com/taqboz/gotello/app/controllers.viewIndexhandler(0x14b05c0, 0xc00016c1c0, 0xc0001e6000)
+	/Users/takumi/Workspace/go/src/github.com/taqboz/gotello/app/controllers/webserver.go:13 +0xc0
+net/http.HandlerFunc.ServeHTTP(0x143ead0, 0x14b05c0, 0xc00016c1c0, 0xc0001e6000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1995 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1763620, 0x14b05c0, 0xc00016c1c0, 0xc0001e6000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2375 +0x1d6
+net/http.serverHandler.ServeHTTP(0xc0000ca8f0, 0x14b05c0, 0xc00016c1c0, 0xc0001e6000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2774 +0xa8
+net/http.(*conn).serve(0xc0000af0e0, 0x14b0cc0, 0xc00009c1c0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1878 +0x851
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2884 +0x2f4
+2019/08/14 10:10:34 server.go:3012: http: panic serving 127.0.0.1:51888: runtime error: invalid memory address or nil pointer dereference
+goroutine 37 [running]:
+net/http.(*conn).serve.func1(0xc0001c40a0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1769 +0x139
+panic(0x13bc5a0, 0x1754140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/runtime/panic.go:522 +0x1b5
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x14a9b60, 0xc00016c2a0, 0x0, 0x0, 0x14a9c80, 0xc00008a4e0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:119 +0x2f
+github.com/taqboz/gotello/app/controllers.viewIndexhandler(0x14b05c0, 0xc00016c2a0, 0xc00014e300)
+	/Users/takumi/Workspace/go/src/github.com/taqboz/gotello/app/controllers/webserver.go:13 +0xc0
+net/http.HandlerFunc.ServeHTTP(0x143ead0, 0x14b05c0, 0xc00016c2a0, 0xc00014e300)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1995 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1763620, 0x14b05c0, 0xc00016c2a0, 0xc00014e300)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2375 +0x1d6
+net/http.serverHandler.ServeHTTP(0xc0000ca8f0, 0x14b05c0, 0xc00016c2a0, 0xc00014e300)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2774 +0xa8
+net/http.(*conn).serve(0xc0001c40a0, 0x14b0cc0, 0xc00005c540)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1878 +0x851
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2884 +0x2f4
+2019/08/14 10:10:34 server.go:3012: http: panic serving 127.0.0.1:51889: runtime error: invalid memory address or nil pointer dereference
+goroutine 40 [running]:
+net/http.(*conn).serve.func1(0xc0001c4140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1769 +0x139
+panic(0x13bc5a0, 0x1754140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/runtime/panic.go:522 +0x1b5
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x14a9b60, 0xc00020e000, 0x0, 0x0, 0x14a9c80, 0xc00008a570)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:119 +0x2f
+github.com/taqboz/gotello/app/controllers.viewIndexhandler(0x14b05c0, 0xc00020e000, 0xc0001e6100)
+	/Users/takumi/Workspace/go/src/github.com/taqboz/gotello/app/controllers/webserver.go:13 +0xc0
+net/http.HandlerFunc.ServeHTTP(0x143ead0, 0x14b05c0, 0xc00020e000, 0xc0001e6100)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1995 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1763620, 0x14b05c0, 0xc00020e000, 0xc0001e6100)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2375 +0x1d6
+net/http.serverHandler.ServeHTTP(0xc0000ca8f0, 0x14b05c0, 0xc00020e000, 0xc0001e6100)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2774 +0xa8
+net/http.(*conn).serve(0xc0001c4140, 0x14b0cc0, 0xc00009c340)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1878 +0x851
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2884 +0x2f4
+2019/08/14 10:10:53 server.go:3012: http: panic serving 127.0.0.1:51890: runtime error: invalid memory address or nil pointer dereference
+goroutine 22 [running]:
+net/http.(*conn).serve.func1(0xc0000af180)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1769 +0x139
+panic(0x13bc5a0, 0x1754140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/runtime/panic.go:522 +0x1b5
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x14a9b60, 0xc00020e0e0, 0x0, 0x0, 0x14a9c80, 0xc00013c4e0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:119 +0x2f
+github.com/taqboz/gotello/app/controllers.viewIndexhandler(0x14b05c0, 0xc00020e0e0, 0xc00014e400)
+	/Users/takumi/Workspace/go/src/github.com/taqboz/gotello/app/controllers/webserver.go:13 +0xc0
+net/http.HandlerFunc.ServeHTTP(0x143ead0, 0x14b05c0, 0xc00020e0e0, 0xc00014e400)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1995 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1763620, 0x14b05c0, 0xc00020e0e0, 0xc00014e400)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2375 +0x1d6
+net/http.serverHandler.ServeHTTP(0xc0000ca8f0, 0x14b05c0, 0xc00020e0e0, 0xc00014e400)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2774 +0xa8
+net/http.(*conn).serve(0xc0000af180, 0x14b0cc0, 0xc00005c6c0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1878 +0x851
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2884 +0x2f4
+2019/08/14 10:10:53 server.go:3012: http: panic serving 127.0.0.1:51891: runtime error: invalid memory address or nil pointer dereference
+goroutine 50 [running]:
+net/http.(*conn).serve.func1(0xc00012c1e0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1769 +0x139
+panic(0x13bc5a0, 0x1754140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/runtime/panic.go:522 +0x1b5
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x14a9b60, 0xc00020e1c0, 0x0, 0x0, 0x14a9c80, 0xc00013c510)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:119 +0x2f
+github.com/taqboz/gotello/app/controllers.viewIndexhandler(0x14b05c0, 0xc00020e1c0, 0xc00014e500)
+	/Users/takumi/Workspace/go/src/github.com/taqboz/gotello/app/controllers/webserver.go:13 +0xc0
+net/http.HandlerFunc.ServeHTTP(0x143ead0, 0x14b05c0, 0xc00020e1c0, 0xc00014e500)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1995 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1763620, 0x14b05c0, 0xc00020e1c0, 0xc00014e500)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2375 +0x1d6
+net/http.serverHandler.ServeHTTP(0xc0000ca8f0, 0x14b05c0, 0xc00020e1c0, 0xc00014e500)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2774 +0xa8
+net/http.(*conn).serve(0xc00012c1e0, 0x14b0cc0, 0xc00005c7c0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1878 +0x851
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2884 +0x2f4
+2019/08/14 10:10:53 server.go:3012: http: panic serving 127.0.0.1:51892: runtime error: invalid memory address or nil pointer dereference
+goroutine 25 [running]:
+net/http.(*conn).serve.func1(0xc0000af360)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1769 +0x139
+panic(0x13bc5a0, 0x1754140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/runtime/panic.go:522 +0x1b5
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x14a9b60, 0xc0001ce0e0, 0x0, 0x0, 0x14a9c80, 0xc00008a600)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:119 +0x2f
+github.com/taqboz/gotello/app/controllers.viewIndexhandler(0x14b05c0, 0xc0001ce0e0, 0xc00014e600)
+	/Users/takumi/Workspace/go/src/github.com/taqboz/gotello/app/controllers/webserver.go:13 +0xc0
+net/http.HandlerFunc.ServeHTTP(0x143ead0, 0x14b05c0, 0xc0001ce0e0, 0xc00014e600)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1995 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1763620, 0x14b05c0, 0xc0001ce0e0, 0xc00014e600)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2375 +0x1d6
+net/http.serverHandler.ServeHTTP(0xc0000ca8f0, 0x14b05c0, 0xc0001ce0e0, 0xc00014e600)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2774 +0xa8
+net/http.(*conn).serve(0xc0000af360, 0x14b0cc0, 0xc00005c9c0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1878 +0x851
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2884 +0x2f4
+2019/08/14 10:11:36 server.go:3012: http: panic serving 127.0.0.1:51896: runtime error: invalid memory address or nil pointer dereference
+goroutine 19 [running]:
+net/http.(*conn).serve.func1(0xc0001261e0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1769 +0x139
+panic(0x13b2900, 0x1742140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/runtime/panic.go:522 +0x1b5
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x149d5a0, 0xc000164000, 0x0, 0x0, 0x149d6c0, 0xc0001341e0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:119 +0x2f
+github.com/taqboz/gotello/app/controllers.viewIndexhandler(0x14a3de0, 0xc000164000, 0xc000148100)
+	/Users/takumi/Workspace/go/src/github.com/taqboz/gotello/app/controllers/webserver.go:13 +0xc0
+net/http.HandlerFunc.ServeHTTP(0x1433ca8, 0x14a3de0, 0xc000164000, 0xc000148100)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1995 +0x44
+net/http.(*ServeMux).ServeHTTP(0x17515c0, 0x14a3de0, 0xc000164000, 0xc000148100)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2375 +0x1d6
+net/http.serverHandler.ServeHTTP(0xc0000c89c0, 0x14a3de0, 0xc000164000, 0xc000148100)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2774 +0xa8
+net/http.(*conn).serve(0xc0001261e0, 0x14a44e0, 0xc00005c1c0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1878 +0x851
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2884 +0x2f4
+2019/08/14 10:11:36 server.go:3012: http: panic serving 127.0.0.1:51897: runtime error: invalid memory address or nil pointer dereference
+goroutine 4 [running]:
+net/http.(*conn).serve.func1(0xc000138000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1769 +0x139
+panic(0x13b2900, 0x1742140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/runtime/panic.go:522 +0x1b5
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x149d5a0, 0xc0001640e0, 0x0, 0x0, 0x149d6c0, 0xc000134210)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:119 +0x2f
+github.com/taqboz/gotello/app/controllers.viewIndexhandler(0x14a3de0, 0xc0001640e0, 0xc000148000)
+	/Users/takumi/Workspace/go/src/github.com/taqboz/gotello/app/controllers/webserver.go:13 +0xc0
+net/http.HandlerFunc.ServeHTTP(0x1433ca8, 0x14a3de0, 0xc0001640e0, 0xc000148000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1995 +0x44
+net/http.(*ServeMux).ServeHTTP(0x17515c0, 0x14a3de0, 0xc0001640e0, 0xc000148000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2375 +0x1d6
+net/http.serverHandler.ServeHTTP(0xc0000c89c0, 0x14a3de0, 0xc0001640e0, 0xc000148000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2774 +0xa8
+net/http.(*conn).serve(0xc000138000, 0x14a44e0, 0xc00005c080)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1878 +0x851
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2884 +0x2f4
+2019/08/14 10:11:36 server.go:3012: http: panic serving 127.0.0.1:51898: runtime error: invalid memory address or nil pointer dereference
+goroutine 36 [running]:
+net/http.(*conn).serve.func1(0xc0001b4000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1769 +0x139
+panic(0x13b2900, 0x1742140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/runtime/panic.go:522 +0x1b5
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x149d5a0, 0xc0001bc000, 0x0, 0x0, 0x149d6c0, 0xc000134240)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:119 +0x2f
+github.com/taqboz/gotello/app/controllers.viewIndexhandler(0x14a3de0, 0xc0001bc000, 0xc0001b6000)
+	/Users/takumi/Workspace/go/src/github.com/taqboz/gotello/app/controllers/webserver.go:13 +0xc0
+net/http.HandlerFunc.ServeHTTP(0x1433ca8, 0x14a3de0, 0xc0001bc000, 0xc0001b6000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1995 +0x44
+net/http.(*ServeMux).ServeHTTP(0x17515c0, 0x14a3de0, 0xc0001bc000, 0xc0001b6000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2375 +0x1d6
+net/http.serverHandler.ServeHTTP(0xc0000c89c0, 0x14a3de0, 0xc0001bc000, 0xc0001b6000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2774 +0xa8
+net/http.(*conn).serve(0xc0001b4000, 0x14a44e0, 0xc0000ae340)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1878 +0x851
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2884 +0x2f4
+2019/08/14 10:11:37 server.go:3012: http: panic serving 127.0.0.1:51899: runtime error: invalid memory address or nil pointer dereference
+goroutine 51 [running]:
+net/http.(*conn).serve.func1(0xc0000ad220)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1769 +0x139
+panic(0x13b2900, 0x1742140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/runtime/panic.go:522 +0x1b5
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x149d5a0, 0xc0001bc0e0, 0x0, 0x0, 0x149d6c0, 0xc000088360)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:119 +0x2f
+github.com/taqboz/gotello/app/controllers.viewIndexhandler(0x14a3de0, 0xc0001bc0e0, 0xc0001d8100)
+	/Users/takumi/Workspace/go/src/github.com/taqboz/gotello/app/controllers/webserver.go:13 +0xc0
+net/http.HandlerFunc.ServeHTTP(0x1433ca8, 0x14a3de0, 0xc0001bc0e0, 0xc0001d8100)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1995 +0x44
+net/http.(*ServeMux).ServeHTTP(0x17515c0, 0x14a3de0, 0xc0001bc0e0, 0xc0001d8100)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2375 +0x1d6
+net/http.serverHandler.ServeHTTP(0xc0000c89c0, 0x14a3de0, 0xc0001bc0e0, 0xc0001d8100)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2774 +0xa8
+net/http.(*conn).serve(0xc0000ad220, 0x14a44e0, 0xc00015a1c0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1878 +0x851
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2884 +0x2f4
+2019/08/14 10:11:37 server.go:3012: http: panic serving 127.0.0.1:51900: runtime error: invalid memory address or nil pointer dereference
+goroutine 5 [running]:
+net/http.(*conn).serve.func1(0xc0001380a0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1769 +0x139
+panic(0x13b2900, 0x1742140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/runtime/panic.go:522 +0x1b5
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x149d5a0, 0xc0001bc1c0, 0x0, 0x0, 0x149d6c0, 0xc0001342d0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:119 +0x2f
+github.com/taqboz/gotello/app/controllers.viewIndexhandler(0x14a3de0, 0xc0001bc1c0, 0xc0001d8000)
+	/Users/takumi/Workspace/go/src/github.com/taqboz/gotello/app/controllers/webserver.go:13 +0xc0
+net/http.HandlerFunc.ServeHTTP(0x1433ca8, 0x14a3de0, 0xc0001bc1c0, 0xc0001d8000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1995 +0x44
+net/http.(*ServeMux).ServeHTTP(0x17515c0, 0x14a3de0, 0xc0001bc1c0, 0xc0001d8000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2375 +0x1d6
+net/http.serverHandler.ServeHTTP(0xc0000c89c0, 0x14a3de0, 0xc0001bc1c0, 0xc0001d8000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2774 +0xa8
+net/http.(*conn).serve(0xc0001380a0, 0x14a44e0, 0xc00015a140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1878 +0x851
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2884 +0x2f4
+2019/08/14 10:11:37 server.go:3012: http: panic serving 127.0.0.1:51901: runtime error: invalid memory address or nil pointer dereference
+goroutine 20 [running]:
+net/http.(*conn).serve.func1(0xc000126280)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1769 +0x139
+panic(0x13b2900, 0x1742140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/runtime/panic.go:522 +0x1b5
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x149d5a0, 0xc0001641c0, 0x0, 0x0, 0x149d6c0, 0xc000134300)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:119 +0x2f
+github.com/taqboz/gotello/app/controllers.viewIndexhandler(0x14a3de0, 0xc0001641c0, 0xc0001d8200)
+	/Users/takumi/Workspace/go/src/github.com/taqboz/gotello/app/controllers/webserver.go:13 +0xc0
+net/http.HandlerFunc.ServeHTTP(0x1433ca8, 0x14a3de0, 0xc0001641c0, 0xc0001d8200)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1995 +0x44
+net/http.(*ServeMux).ServeHTTP(0x17515c0, 0x14a3de0, 0xc0001641c0, 0xc0001d8200)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2375 +0x1d6
+net/http.serverHandler.ServeHTTP(0xc0000c89c0, 0x14a3de0, 0xc0001641c0, 0xc0001d8200)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2774 +0xa8
+net/http.(*conn).serve(0xc000126280, 0x14a44e0, 0xc00015a280)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1878 +0x851
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2884 +0x2f4
+2019/08/14 10:14:45 server.go:3012: http: panic serving 127.0.0.1:51909: runtime error: invalid memory address or nil pointer dereference
+goroutine 34 [running]:
+net/http.(*conn).serve.func1(0xc0000ab040)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1769 +0x139
+panic(0x13b2900, 0x1742140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/runtime/panic.go:522 +0x1b5
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x149d5a0, 0xc00017c000, 0x0, 0x0, 0x149d6c0, 0xc0001340f0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:119 +0x2f
+github.com/taqboz/gotello/app/controllers.viewIndexHandler(0x14a3de0, 0xc00017c000, 0xc00015a000)
+	/Users/takumi/Workspace/go/src/github.com/taqboz/gotello/app/controllers/webserver.go:13 +0xc0
+net/http.HandlerFunc.ServeHTTP(0x1433ca8, 0x14a3de0, 0xc00017c000, 0xc00015a000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1995 +0x44
+net/http.(*ServeMux).ServeHTTP(0x17515c0, 0x14a3de0, 0xc00017c000, 0xc00015a000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2375 +0x1d6
+net/http.serverHandler.ServeHTTP(0xc000090f70, 0x14a3de0, 0xc00017c000, 0xc00015a000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2774 +0xa8
+net/http.(*conn).serve(0xc0000ab040, 0x14a44e0, 0xc0001161c0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1878 +0x851
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2884 +0x2f4
+2019/08/14 10:14:45 server.go:3012: http: panic serving 127.0.0.1:51910: runtime error: invalid memory address or nil pointer dereference
+goroutine 19 [running]:
+net/http.(*conn).serve.func1(0xc000138000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1769 +0x139
+panic(0x13b2900, 0x1742140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/runtime/panic.go:522 +0x1b5
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x149d5a0, 0xc0001b2000, 0x0, 0x0, 0x149d6c0, 0xc000114330)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:119 +0x2f
+github.com/taqboz/gotello/app/controllers.viewIndexHandler(0x14a3de0, 0xc0001b2000, 0xc00016e000)
+	/Users/takumi/Workspace/go/src/github.com/taqboz/gotello/app/controllers/webserver.go:13 +0xc0
+net/http.HandlerFunc.ServeHTTP(0x1433ca8, 0x14a3de0, 0xc0001b2000, 0xc00016e000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1995 +0x44
+net/http.(*ServeMux).ServeHTTP(0x17515c0, 0x14a3de0, 0xc0001b2000, 0xc00016e000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2375 +0x1d6
+net/http.serverHandler.ServeHTTP(0xc000090f70, 0x14a3de0, 0xc0001b2000, 0xc00016e000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2774 +0xa8
+net/http.(*conn).serve(0xc000138000, 0x14a44e0, 0xc00014c040)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1878 +0x851
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2884 +0x2f4
+2019/08/14 10:14:45 server.go:3012: http: panic serving 127.0.0.1:51911: runtime error: invalid memory address or nil pointer dereference
+goroutine 50 [running]:
+net/http.(*conn).serve.func1(0xc0001181e0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1769 +0x139
+panic(0x13b2900, 0x1742140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/runtime/panic.go:522 +0x1b5
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x149d5a0, 0xc0001dc000, 0x0, 0x0, 0x149d6c0, 0xc0001341b0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:119 +0x2f
+github.com/taqboz/gotello/app/controllers.viewIndexHandler(0x14a3de0, 0xc0001dc000, 0xc0001d8000)
+	/Users/takumi/Workspace/go/src/github.com/taqboz/gotello/app/controllers/webserver.go:13 +0xc0
+net/http.HandlerFunc.ServeHTTP(0x1433ca8, 0x14a3de0, 0xc0001dc000, 0xc0001d8000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1995 +0x44
+net/http.(*ServeMux).ServeHTTP(0x17515c0, 0x14a3de0, 0xc0001dc000, 0xc0001d8000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2375 +0x1d6
+net/http.serverHandler.ServeHTTP(0xc000090f70, 0x14a3de0, 0xc0001dc000, 0xc0001d8000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2774 +0xa8
+net/http.(*conn).serve(0xc0001181e0, 0x14a44e0, 0xc00009c340)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1878 +0x851
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2884 +0x2f4
+2019/08/14 10:14:54 server.go:3012: http: panic serving 127.0.0.1:51912: runtime error: invalid memory address or nil pointer dereference
+goroutine 21 [running]:
+net/http.(*conn).serve.func1(0xc0001380a0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1769 +0x139
+panic(0x13b2900, 0x1742140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/runtime/panic.go:522 +0x1b5
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x149d5a0, 0xc0001b20e0, 0x0, 0x0, 0x149d6c0, 0xc00008b3e0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:119 +0x2f
+github.com/taqboz/gotello/app/controllers.viewIndexHandler(0x14a3de0, 0xc0001b20e0, 0xc0001d8100)
+	/Users/takumi/Workspace/go/src/github.com/taqboz/gotello/app/controllers/webserver.go:13 +0xc0
+net/http.HandlerFunc.ServeHTTP(0x1433ca8, 0x14a3de0, 0xc0001b20e0, 0xc0001d8100)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1995 +0x44
+net/http.(*ServeMux).ServeHTTP(0x17515c0, 0x14a3de0, 0xc0001b20e0, 0xc0001d8100)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2375 +0x1d6
+net/http.serverHandler.ServeHTTP(0xc000090f70, 0x14a3de0, 0xc0001b20e0, 0xc0001d8100)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2774 +0xa8
+net/http.(*conn).serve(0xc0001380a0, 0x14a44e0, 0xc00009c480)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1878 +0x851
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2884 +0x2f4
+2019/08/14 10:14:54 server.go:3012: http: panic serving 127.0.0.1:51913: runtime error: invalid memory address or nil pointer dereference
+goroutine 51 [running]:
+net/http.(*conn).serve.func1(0xc000118280)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1769 +0x139
+panic(0x13b2900, 0x1742140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/runtime/panic.go:522 +0x1b5
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x149d5a0, 0xc0001dc0e0, 0x0, 0x0, 0x149d6c0, 0xc00016c0c0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:119 +0x2f
+github.com/taqboz/gotello/app/controllers.viewIndexHandler(0x14a3de0, 0xc0001dc0e0, 0xc0001d8200)
+	/Users/takumi/Workspace/go/src/github.com/taqboz/gotello/app/controllers/webserver.go:13 +0xc0
+net/http.HandlerFunc.ServeHTTP(0x1433ca8, 0x14a3de0, 0xc0001dc0e0, 0xc0001d8200)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1995 +0x44
+net/http.(*ServeMux).ServeHTTP(0x17515c0, 0x14a3de0, 0xc0001dc0e0, 0xc0001d8200)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2375 +0x1d6
+net/http.serverHandler.ServeHTTP(0xc000090f70, 0x14a3de0, 0xc0001dc0e0, 0xc0001d8200)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2774 +0xa8
+net/http.(*conn).serve(0xc000118280, 0x14a44e0, 0xc00009c500)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1878 +0x851
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2884 +0x2f4
+2019/08/14 10:14:54 server.go:3012: http: panic serving 127.0.0.1:51914: runtime error: invalid memory address or nil pointer dereference
+goroutine 37 [running]:
+net/http.(*conn).serve.func1(0xc0000ab0e0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1769 +0x139
+panic(0x13b2900, 0x1742140)
+	/usr/local/Cellar/go/1.12.7/libexec/src/runtime/panic.go:522 +0x1b5
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x149d5a0, 0xc0001b21c0, 0x0, 0x0, 0x149d6c0, 0xc00008b500)
+	/usr/local/Cellar/go/1.12.7/libexec/src/html/template/template.go:119 +0x2f
+github.com/taqboz/gotello/app/controllers.viewIndexHandler(0x14a3de0, 0xc0001b21c0, 0xc00021c000)
+	/Users/takumi/Workspace/go/src/github.com/taqboz/gotello/app/controllers/webserver.go:13 +0xc0
+net/http.HandlerFunc.ServeHTTP(0x1433ca8, 0x14a3de0, 0xc0001b21c0, 0xc00021c000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1995 +0x44
+net/http.(*ServeMux).ServeHTTP(0x17515c0, 0x14a3de0, 0xc0001b21c0, 0xc00021c000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2375 +0x1d6
+net/http.serverHandler.ServeHTTP(0xc000090f70, 0x14a3de0, 0xc0001b21c0, 0xc00021c000)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2774 +0xa8
+net/http.(*conn).serve(0xc0000ab0e0, 0x14a44e0, 0xc00014c280)
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:1878 +0x851
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.12.7/libexec/src/net/http/server.go:2884 +0x2f4
+2019/08/14 11:28:18 main.go:12: listen tcp 0.0.0.0:8080: bind: address already in use
+2019/08/14 11:28:38 webserver.go:15: open app/view/index.html: no such file or directory
