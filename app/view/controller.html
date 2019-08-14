@@ -1,0 +1,30 @@
+{{ template "layout.html" }}
+{{ define "content" }}
+    <style>
+        .controller-box {
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function sendCommand(command, params={}) {
+            params['command'] = command;
+            $.post("/api/command/", params).done(function (json){
+                console.log({action: 'sendCommand', params: params, json: json, status: 'success'})
+            }, 'json').fail(function (json) {
+                console.log({action: 'sendCommand', params: params, json: json, status: 'fail'})
+            }, 'json')
+        }
+    </script>
+    <div class="controller-box">
+        <h1>Remote Controller</h1>
+    </div>
+    <div class="controller-box">
+        <div data-role="controlgroup" data-type="horizontal">
+            <a href="#" data-role="button" onclick="sendCommand('ceaseRotation'); return false">Cease</a>
+            <a href="#" data-role="button" onclick="sendCommand('takeOff'); return false">Take off</a>
+            <a href="#" data-role="button" onclick="sendCommand('land'); return false">Land</a>
+            <a href="#" data-role="button" onclick="sendCommand('hover'); return false">Hover</a>
+        </div>
+    </div>
+{{ end }}
