@@ -3,12 +3,21 @@ package controllers
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/taqboz/gotello/app/models"
 	"github.com/taqboz/gotello/config"
 	"html/template"
 	"log"
 	"net/http"
 	"regexp"
 )
+
+var appContext struct {
+	DroneManager *models.DroneManager
+}
+
+func init() {
+	appContext.DroneManager = models.NewDroneManager()
+}
 
 // テンプレートの読み込み
 func getTemplate(temp string) (*template.Template, error) {
@@ -65,6 +74,17 @@ func apiMakeHandler(fn func(w http.ResponseWriter, r *http.Request)) http.Handle
 func apiCommandHandler(w http.ResponseWriter, r *http.Request)  {
 	command := r.FormValue("command")
 	log.Printf("action=apiCommandHandler command=%s", command)
+	drone := appContext.DroneManager
+	switch command {
+	case "ceaseRotation":
+		drone.CeaseRotation()
+	case "takeOff":
+		drone.TakeOff()
+	case "land":
+		drone.Land()
+	case "hover":
+		drone.Hover()
+	}
 	APIResponse(w, "OK", http.StatusOK)
 }
 

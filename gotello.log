@@ -473,3 +473,8 @@ created by net/http.(*Server).Serve
 2019/08/14 11:28:38 webserver.go:15: open app/view/index.html: no such file or directory
 2019/08/14 13:40:01 webserver.go:67: action=apiCommandHandler command=ceaseRotation
 2019/08/14 13:40:02 webserver.go:67: action=apiCommandHandler command=takeOff
+2019/08/14 13:47:57 webserver.go:76: action=apiCommandHandler command=takeOff
+2019/08/14 13:48:04 webserver.go:76: action=apiCommandHandler command=land
+2019/08/14 13:49:21 webserver.go:76: action=apiCommandHandler command=takeOff
+2019/08/14 13:49:37 webserver.go:76: action=apiCommandHandler command=land
+2019/08/14 14:32:21 robot.go:203: Stopping Robot tello ...
