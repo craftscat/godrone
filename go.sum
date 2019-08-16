@@ -6,8 +6,12 @@ github.com/hashicorp/errwrap v1.0.0 h1:hLrqtEDnRye3+sgx6z4qVLNuviH3MR5aQ0ykNJa/U
 github.com/hashicorp/errwrap v1.0.0/go.mod h1:YH+1FKiLXxHSkmPseP+kNlulaMuP3n2brvKWEqk/Jc4=
 github.com/hashicorp/go-multierror v1.0.0 h1:iVjPR7a6H0tWELX5NxNe7bYopibicUzc7uPribsnS6o=
 github.com/hashicorp/go-multierror v1.0.0/go.mod h1:dHtQlpGsu+cZNNAkkCN/P3hoUDHhCYQXV3UM06sGGrk=
+github.com/hybridgroup/mjpeg v0.0.0-20140228234708-4680f319790e h1:xCcwD5FOXul+j1dn8xD16nbrhJkkum/Cn+jTd/u1LhY=
+github.com/hybridgroup/mjpeg v0.0.0-20140228234708-4680f319790e/go.mod h1:eagM805MRKrioHYuU7iKLUyFPVKqVV6um5DAvCkUtXs=
 gobot.io/x/gobot v1.13.0 h1:weLr2fvxugeR0KCK7FGIKaxZ00SRoZbxNbki+vCyQsk=
 gobot.io/x/gobot v1.13.0/go.mod h1:yQwOPKcHJsXOfrtPaszuiCm/QkUhSNvDwf8+BTrll1A=
+gocv.io/x/gocv v0.20.0 h1:2q75zQ8Zel2tB69G6qrmf/E7EdvaCs90qvkHzdSBOAg=
+gocv.io/x/gocv v0.20.0/go.mod h1:vZETJRwLnl11muQ6iL3q4ju+0oJRrdmYdv5xJTH7WYA=
 golang.org/x/sync v0.0.0-20190423024810-112230192c58 h1:8gQV6CLnAEikrhgkHFbMAEhagSSnXWGV915qUMm9mrU=
 golang.org/x/sync v0.0.0-20190423024810-112230192c58/go.mod h1:RxMgew5VJxzue5/jJTE5uejpjVlOe/izrB70Jof72aM=
 gopkg.in/ini.v1 v1.46.0 h1:VeDZbLYGaupuvIrsYCEOe/L/2Pcs5n7hdO1ZTjporag=
