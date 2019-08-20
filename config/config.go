@@ -25,7 +25,7 @@ func init()  {
 
 	// 設定
 	Config = ConfList{
-		LogFile: cfg.Section("gotello").Key("log_file").String(),
+		LogFile: cfg.Section("godrone").Key("log_file").String(),
 		Address: cfg.Section("web").Key("address").String(),
 		Port:    cfg.Section("web").Key("port").MustInt(),
 	}

@@ -21,6 +21,7 @@ const (
 	frameX            = 960 / 3
 	frameY            = 720 / 3
 	frameArea         = frameX * frameY
+	// 3次元配列なので*3
 	frameSize         = frameArea * 3
 	faceDetectXMLFile = "./app/models/haarcascade_frontalface_default.xml"
 )
@@ -28,6 +29,7 @@ const (
 type DroneManager struct {
 	*tello.Driver
 	Speed                int
+	// ビデオの書き込み/読み込み
 	ffmpegIn             io.WriteCloser
 	ffmpegOut            io.ReadCloser
 	Stream               *mjpeg.Stream
@@ -37,6 +39,7 @@ type DroneManager struct {
 func NewDroneManager() *DroneManager {
 	drone := tello.NewDriver("8889")
 
+	// ffmpegのプロセスの立ち上げ
 	ffmpeg := exec.Command("ffmpeg", "-hwaccel", "auto", "-hwaccel_device", "opencl", "-i", "pipe:0", "-pix_fmt", "bgr24",
 		"-s", strconv.Itoa(frameX)+"x"+strconv.Itoa(frameY), "-f", "rawvideo", "pipe:1")
 	ffmpegIn, _ := ffmpeg.StdinPipe()
@@ -50,18 +53,23 @@ func NewDroneManager() *DroneManager {
 		Stream:               mjpeg.NewStream(),
 		faceDetectTrackingOn: false,
 	}
+
 	work := func() {
 		if err := ffmpeg.Start(); err != nil {
 			log.Println(err)
 			return
 		}
 
+		// ドローンとの接続時の処理
 		drone.On(tello.ConnectedEvent, func(data interface{}) {
 			log.Println("Connected")
 			drone.StartVideo()
+			// エンコードレート
 			drone.SetVideoEncoderRate(tello.VideoBitRateAuto)
+			// 露光
 			drone.SetExposure(0)
 
+			// ビデオのバイナリを取り続ける
 			gobot.Every(100*time.Millisecond, func() {
 				drone.StartVideo()
 			})
@@ -70,6 +78,7 @@ func NewDroneManager() *DroneManager {
 		})
 
 		drone.On(tello.VideoFrameEvent, func(data interface{}) {
+			// 取得したパケットをbyte配列にする
 			pkt := data.([]byte)
 			if _, err := ffmpegIn.Write(pkt); err != nil {
 				log.Println(err)
