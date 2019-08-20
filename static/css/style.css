@@ -1,0 +1,15 @@
+.camera {
+    width: 60%;
+    display: inline-block;
+}
+
+.controller {
+    position: fixed;
+    top: 100px;
+    width: 30%;
+    display: inline-block;
+}
+
+img {
+    width:80%;
+}

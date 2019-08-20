@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Drone World</title>
+    <title>Tello on Go</title>
 
     <link rel="stylesheet" href="/static/css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 
     <script src="/static/js/jquery-1.11.1.min.js"></script>
     <script src="/static/js/jquery.mobile-1.4.5.min.js"></script>
@@ -14,8 +15,8 @@
 <body>
 <div data-role="page">
     <div data-role="header">
-        <a href="/" data-icon="home" data-dom-cache="false">Home</a>
-        <h1>Drone World</h1>
+        <a href="#" data-icon="delete" data-role="button" onclick="sendCommand('endApp'); return false;">End</a>
+        <h1>Tello on Go</h1>
     </div>
 
     <div data-role="content">

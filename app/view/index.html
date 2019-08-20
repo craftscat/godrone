@@ -1,12 +1,103 @@
-{{ template "layout.html" }}}
-{{ define "content" }}
-<div align="center">
-    <h1>Drone World</h1>
-    <img width="100%" src="/static/img/drone.png">
-</div>
+{{ template "layout.html"}}
 
-<ul data-role="listview">
-    <li><a href="/controller/">Controller</a></li>
-    <li><a href="/game/shake/">Shake Game</a></li>
-</ul>
-{{ end }}}
+{{ define "content"}}
+    <style>
+        .controller-box {
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function sendCommand(command, params={}){
+            params['command'] = command
+            $.post("/api/command/", params).done(function (json){
+                console.log({action: 'sendCommand', params: params, json: json, status: 'success'})
+            }, 'json').fail(function (json) {
+                console.log({action: 'sendCommand', params: params, json: json, status: 'fail'})
+            }, 'json')
+        }
+
+        $(document).on('pageinit', function(){
+            $('#slider-speed').on("slidestop", function (event){
+                let params = {
+                    speed: $('#slider-speed').val(),
+                }
+                sendCommand('speed', params)
+            });
+        });
+    </script>
+
+    <div class="camera">
+        <div class="controller-box">
+            <img src="/video/streaming">
+            <br>
+            <div data-role="controlgroup" data-type="horizontal">
+                <a href="#" data-role="button" data-inline="true" onclick="sendCommand('faceDetectTrack'); return false;">Face Track</a>
+                <a href="#" data-role="button" data-inline="true" onclick="sendCommand('stopFaceDetectTrack'); return false;">Stop Face Track</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="controller">
+        <div class="controller-box">
+            <h1>Remote Controller</h1>
+        </div>
+
+        <div class="controller-box">
+            <div data-role="controlgroup" data-type="horizontal">
+                <a href="#" data-role="button" onclick="sendCommand('ceaseRotation'); return false;">Cease</a>
+                <a href="#" data-role="button" onclick="sendCommand('takeOff'); return false;">Take off</a>
+                <a href="#" data-role="button" onclick="sendCommand('land'); return false;">Land</a>
+                <a href="#" data-role="button" onclick="sendCommand('hover'); return false;">Hover</a>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: center;">
+            <table style="align-self: center;">
+                <td>
+                    <div style="text-align: center;">
+                        <div class="ui-nodisc-icon ui-alt-icon">
+                            <a id="up" href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-u ui-btn-icon-notext ui-btn-inline"
+                               onclick="sendCommand('up'); return false;"></a>
+                        </div>
+                        <div class="ui-nodisc-icon ui-alt-icon">
+                            <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-forward ui-btn-icon-notext ui-btn-inline"
+                               onclick="sendCommand('clockwise'); return false;"></a>
+                            <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-inline"
+                               onclick="sendCommand('counterClockwise'); return false;"></a>
+                        </div>
+                        <div class="ui-nodisc-icon ui-alt-icon">
+                            <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-d ui-btn-icon-notext ui-btn-inline"
+                               onclick="sendCommand('down'); return false;"></a>
+                        </div>
+                    </div>
+                </td>
+
+                <td>
+                    <div style="text-align: center;">
+                        <div class="ui-nodisc-icon ui-alt-icon">
+                            <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-u ui-btn-icon-notext ui-btn-inline"
+                               onclick="sendCommand('forward'); return false;"></a>
+                        </div>
+                        <div class="ui-nodisc-icon ui-alt-icon">
+                            <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext ui-btn-inline"
+                               onclick="sendCommand('left'); return false;"></a>
+                            <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-notext ui-btn-inline"
+                               onclick="sendCommand('right'); return false;"></a>
+                        </div>
+                        <div class="ui-nodisc-icon ui-alt-icon">
+                            <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-d ui-btn-icon-notext ui-btn-inline"
+                               onclick="sendCommand('backward'); return false;"></a>
+                        </div>
+                    </div>
+                </td>
+            </table>
+        </div>
+
+        <div class="controller-box">
+            <h3>Speed</h3>
+            <input type="range" name="slider-2" id="slider-speed" data-hightlight="true" min="0" max="100" value="10">
+        </div>
+    </div>
+
+{{ end }}

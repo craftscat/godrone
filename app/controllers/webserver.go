@@ -3,13 +3,15 @@ package controllers
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/taqboz/gotello/app/models"
-	"github.com/taqboz/gotello/config"
 	"html/template"
 	"log"
 	"net/http"
+	"os"
 	"regexp"
 	"strconv"
+
+	"github.com/taqboz/gotello/app/models"
+	"github.com/taqboz/gotello/config"
 )
 
 var appContext struct {
@@ -27,14 +29,6 @@ func getTemplate(temp string) (*template.Template, error) {
 
 func viewIndexHandler(w http.ResponseWriter, r *http.Request) {
 	t, _ := getTemplate("app/view/index.html")
-	err := t.Execute(w, nil)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-	}
-}
-
-func viewControllerHandler(w http.ResponseWriter, r *http.Request) {
-	t, _ := getTemplate("app/view/controller.html")
 	err := t.Execute(w, nil)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -115,31 +109,14 @@ func apiCommandHandler(w http.ResponseWriter, r *http.Request)  {
 		drone.Backward(drone.Speed)
 	case "speed":
 		drone.Speed = getSpeed(r)
-	case "frontFlip":
-		drone.FrontFlip()
-	case "leftFlip":
-		drone.LeftFlip()
-	case "rightFlip":
-		drone.RightFlip()
-	case "backFlip":
-		drone.BackFlip()
-	case "throwTakeOff()":
-		drone.ThrowTakeOff()
-	case "bounce":
-		drone.Bounce()
-
-	// 関数内同じだからまとめるか実装を変えたほうがいいかも?
-	case "patrol":
-		drone.StartPatrol()
-	case "stopPatrol":
-		drone.StopPatrol()
+	case "endApp":
+		fmt.Fprintln(w,"Application End")
+		os.Exit(0)
 
 	case "faceDetectTrack":
 		drone.EnableFaceDetectTracking()
 	case "stopFaceDetectTrack":
 		drone.DisableFaceDetectTracking()
-	case "snapshot":
-		drone.TakeSnapshot()
 	default:
 		APIResponse(w, "Not found", http.StatusNotFound)
 		return
@@ -149,7 +126,6 @@ func apiCommandHandler(w http.ResponseWriter, r *http.Request)  {
 
 func StartWebServer() error {
 	http.HandleFunc("/", viewIndexHandler)
-	http.HandleFunc("/controller/", viewControllerHandler)
 	http.HandleFunc("/api/command/", apiMakeHandler(apiCommandHandler))
 	http.Handle("/video/streaming", appContext.DroneManager.Stream)
 	// "static"をファイルサーバーとして使用する
